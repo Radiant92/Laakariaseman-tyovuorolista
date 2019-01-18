@@ -9,17 +9,17 @@ lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja vo
 
 ## Toimintoja
 
--Kirjautuminen
--Työntekiän lisäys
--työntekiän poisto
--Kiireellisyysluokkien hallinta
--Henkilöstövahvuuskalenterin hallinta
--Työvuorolistan hallinta
--Henkilökohtainen työvuoro lista
--Työvuorolistan listaus
--Työntekijäkohtainen työraportti (tehdyt tunnit tietyllä aikavälillä ja montako työtuntiä jäljellä)
--Työntekijän tekemien tuntien listaus kiireellisyysluokittain
--Työvuorolistan ylimiehityksen raportointi
+- Kirjautuminen
+- Työntekiän lisäys
+- työntekiän poisto
+- Kiireellisyysluokkien hallinta
+- Henkilöstövahvuuskalenterin hallinta
+- Työvuorolistan hallinta
+- Henkilökohtainen työvuoro lista
+- Työvuorolistan listaus
+- Työntekijäkohtainen työraportti (tehdyt tunnit tietyllä aikavälillä ja montako työtuntiä jäljellä)
+- Työntekijän tekemien tuntien listaus kiireellisyysluokittain
+- Työvuorolistan ylimiehityksen raportointi
 
 # Linkit
 
