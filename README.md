@@ -1,2 +1,2 @@
-# L-k-riaseman-ty-vuorolista
+# Laakariaseman-tyovuorolista
 2019 periodin 3 Tietokanta harjoitustyö
