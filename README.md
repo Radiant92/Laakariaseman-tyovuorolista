@@ -25,3 +25,6 @@ lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja vo
 
 Sovellus herokussa 
 [heroku](https://medi-tyovuorolista-harjoitus.herokuapp.com/)
+
+viikkojen projektiin liittymättömät tehtävät
+[tehtävät](/tehtavat)
