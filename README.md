@@ -10,8 +10,7 @@ lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja vo
 ## Toimintoja
 
 - Kirjautuminen
-- Työntekiän lisäys
-- työntekiän poisto
+- Työntekiän hallinta
 - Kiireellisyysluokkien hallinta
 - Työvuorolistan hallinta
 - Henkilökohtainen työvuoro lista
