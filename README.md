@@ -23,5 +23,5 @@ lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja vo
 
 # Linkit
 
-Tässä toistaiseksi eka harjoitustehtävä hello.py 
+Sovellus herokussa 
 [heroku](https://medi-tyovuorolista-harjoitus.herokuapp.com/)
