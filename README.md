@@ -22,5 +22,11 @@ lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja vo
 Sovellus herokussa 
 [sovellus](https://medi-tyovuorolista-harjoitus.herokuapp.com/)
 
+[Tietokanta hahmotelma](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/tietokantaHahmotelma.md)
+
+[User Storyt](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/userStoryt.md)
+
+[Työloki](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/timelog.md)
+
 viikkojen projektiin liittymättömät tehtävät
 [tehtävät](/tehtavat)
