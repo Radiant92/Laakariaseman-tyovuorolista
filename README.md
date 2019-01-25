@@ -27,6 +27,3 @@ Sovellus herokussa
 [User Storyt](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/userStoryt.md)
 
 [Työloki](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/timelog.md)
-
-viikkojen projektiin liittymättömät tehtävät
-[tehtävät](/tehtavat)
