@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Nimi</th>
+      <th>Ammatti</th>
+      <th>Tila</th>
+    </tr>
+    {% for employee in employees %}
+    <tr>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.job }}</td>
+      <td>{{ employee.active }}</td>
+      <td>
+        <form method="POST" action="{{ url_for('employees_set_active', employee_id=employee.id) }}">
+          <input type="submit" value="vaihda tila"/>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

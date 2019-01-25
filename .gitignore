@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#oma
+
+.Rhistory
+employees.db
+
 # C extensions
 *.so
 
@@ -112,4 +117,4 @@ venv.bak/
 dmypy.json
 
 # Pyre type checker
-.pyre/
+.pyre/employees.db
