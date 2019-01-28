@@ -7,13 +7,13 @@
       <th>Ammatti</th>
       <th>Tila</th>
     </tr>
-    {% for employee in employees %}
+    {% for user in employees %}
     <tr>
-      <td>{{ employee.name }}</td>
-      <td>{{ employee.job }}</td>
-      <td>{{ employee.active }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.job }}</td>
+      <td>{{ user.active }}</td>
       <td>
-        <form method="POST" action="{{ url_for('employees_set_active', employee_id=employee.id) }}">
+        <form method="POST" action="{{ url_for('employees_set_active', user_id=user.id) }}">
           <input type="submit" value="vaihda tila"/>
         </form>
       </td>
