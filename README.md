@@ -20,6 +20,8 @@ lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja vo
 # Linkit
 
 Sovellus herokussa 
+## tunnus: admin salasana: admin
+tai voit luoda täysin uuden työntekiän.
 [sovellus](https://medi-tyovuorolista-harjoitus.herokuapp.com/)
 
 [Tietokanta hahmotelma](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/tietokantaHahmotelma.md)
