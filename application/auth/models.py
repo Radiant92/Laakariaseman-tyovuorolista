@@ -16,6 +16,8 @@ class User(db.Model):
     active = db.Column(db.Boolean(), nullable=False)
     hallinto = db.Column(db.Boolean(), nullable=False)
 
+    viikot = db.relationship("Viikko", backref='account', lazy=True)
+
     def __init__(self, name, username, password, job):
         self.name = name
         self.username = username

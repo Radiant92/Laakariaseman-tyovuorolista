@@ -23,6 +23,12 @@
      <ul>
         <li><a href="{{ url_for('kiireellisyysluokat_form') }}">Lisää kiireellisyysluokka</a></li>    
     </ul>
+    <ul>
+        <li><a href="{{ url_for('viikot_index') }}">Lista työviikoista</a></li>    
+     </ul>
+     <ul>
+        <li><a href="{{ url_for('viikot_form') }}">Lisää työviikko</a></li>    
+    </ul>
      {% endif %}
     {% else %}
     <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
