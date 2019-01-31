@@ -7,13 +7,13 @@
       <th>Ammatti</th>
       <th>Tila</th>
     </tr>
-    {% for user in employees %}
+    {% for user in users %}
     <tr>
       <td>{{ user.name }}</td>
       <td>{{ user.job }}</td>
       <td>{{ user.active }}</td>
       <td>
-        <form method="POST" action="{{ url_for('employees_set_active', user_id=user.id) }}">
+        <form method="POST" action="{{ url_for('users_set_active', user_id=user.id) }}">
           <input type="submit" value="vaihda tila"/>
         </form>
       </td>

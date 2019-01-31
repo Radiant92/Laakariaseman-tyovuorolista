@@ -12,11 +12,9 @@ class Kiireellisyysluokka(db.Model):
     laakarit = db.Column(db.Integer, nullable=False)
     sairaanhoitajat = db.Column(db.Integer, nullable=False)
     perushoitajat = db.Column(db.Integer, nullable=False)
-    status = db.Column(db.Boolean(), nullable=False)
 
     def __init__(self, name, laakarit, sairaanhoitajat, perushoitajat):
         self.name = name
         self.laakarit = laakarit
         self.sairaanhoitajat = sairaanhoitajat
         self.perushoitajat = perushoitajat
-        self.status = False

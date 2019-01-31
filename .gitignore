@@ -6,8 +6,8 @@ __pycache__/
 #oma
 .vscode
 .Rhistory
-employees.db
-
+users.db
+kiireellisyysluokka.db
 # C extensions
 *.so
 
@@ -117,4 +117,4 @@ venv.bak/
 dmypy.json
 
 # Pyre type checker
-.pyre/employees.db
+.pyre/users.db

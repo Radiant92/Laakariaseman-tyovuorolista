@@ -10,6 +10,7 @@
 | 25.1.2019 | Dokumentaatio: UserStoryt, tietokantakaavio | 2 | 2 |
 | 28.1.2019 | käyttäjien lisääminen ja validointi flask wtf:iä käyttäen| 3 | 2 |
 | 28.1.2019 | käyttjän lisääminen eritavalla johtaen koko ohjelman uudelleen suunnitteluun ja rakentamiseen... | 5 | 1 |
+| 31.1 | sovelluksen siistimistä ja uudelleen nimeämistä | 0.5 | 0.25 |
 
-## aika projektin tekoon 7h
-## aika yhteensä: 15h
+## aika projektin tekoon 7.25h
+## aika yhteensä: 15.5h

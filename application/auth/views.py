@@ -25,17 +25,17 @@ def auth_logout():
     logout_user()
     return redirect(url_for("index")) 
 
-@app.route("/employees", methods=["Get"])
+@app.route("/users", methods=["Get"])
 @login_required
-def employees_index():
-    return render_template("employees/list.html", employees = User.query.all())
+def users_index():
+    return render_template("users/list.html", users = User.query.all())
 
-@app.route("/employees/new/")
-def employees_form():
-    return render_template("employees/new.html", form = UserForm())
+@app.route("/users/new/")
+def users_form():
+    return render_template("users/new.html", form = UserForm())
 
-@app.route("/employees/<user_id>", methods=["POST"])
-def employees_set_active(user_id):
+@app.route("/users/<user_id>", methods=["POST"])
+def users_set_active(user_id):
     u = User.query.get(user_id)
     if u.active:
         u.active = False
@@ -44,17 +44,17 @@ def employees_set_active(user_id):
     
     db.session().commit()
 
-    return redirect(url_for("employees_index"))
+    return redirect(url_for("users_index"))
 
-@app.route("/employees/", methods=["POST"])
-def employees_create():
+@app.route("/users/", methods=["POST"])
+def users_create():
     form = UserForm(request.form)
 
     if not form.validate():
-        return render_template("employees/new.html", form = form)
+        return render_template("users/new.html", form = form)
 
     u = User(form.name.data,form.username.data ,form.password.data, form.job.data)
     
     db.session().add(u)
     db.session().commit()
-    return redirect(url_for("employees_index"))
+    return redirect(url_for("users_index"))

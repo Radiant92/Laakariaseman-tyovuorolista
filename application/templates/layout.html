@@ -12,17 +12,17 @@
      </p>
      {% if current_user.is_admin %}
      <ul>  
-       <li><a href="{{ url_for('employees_form') }}">Lisää työntekijä</a></li>
+       <li><a href="{{ url_for('users_form') }}">Lisää työntekijä</a></li>
      </ul>
      <ul>
-       <li><a href="{{ url_for('employees_index') }}">Lista työntekiöistä</a></li>    
+       <li><a href="{{ url_for('users_index') }}">Lista työntekiöistä</a></li>    
      </ul>
      {% endif %}
     {% else %}
     <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
     
     <ul>  
-      <li><a href="{{ url_for('employees_form') }}">Lisää työntekijä</a></li>
+      <li><a href="{{ url_for('users_form') }}">Lisää työntekijä</a></li>
     </ul>
     {% endif %}
     {% block body %}
