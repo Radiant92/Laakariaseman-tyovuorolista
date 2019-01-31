@@ -20,17 +20,11 @@
      {% endif %}
     {% else %}
     <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
-    <p>
-      tällä hetkellä kuka vain voi lisätä käyttäjän ja kaikilla käyttäjillä on hallinto oikeudet
-    <p>
-    {% endif %}
-    <ul>  
-      <li><a href="{{ url_for('employees_form') }}">Lisää työntekijä (TÄMÄ LINKKI POISTUU KUN HALLINTO ON TOTEUTTETTU)</a></li>
-    </ul>
-    <ul>
-      <li><a href="{{ url_for('employees_index') }}">Lista työntekiöistä (TÄMÄ LINKKI POISTUU KUN HALLINTO ON TOTEUTETTU))</a></li>
-    </ul>
     
+    <ul>  
+      <li><a href="{{ url_for('employees_form') }}">Lisää työntekijä</a></li>
+    </ul>
+    {% endif %}
     {% block body %}
     <p>
     </p>

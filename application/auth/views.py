@@ -26,6 +26,7 @@ def auth_logout():
     return redirect(url_for("index")) 
 
 @app.route("/employees", methods=["Get"])
+@login_required
 def employees_index():
     return render_template("employees/list.html", employees = User.query.all())
 
