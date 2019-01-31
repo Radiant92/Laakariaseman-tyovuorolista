@@ -35,12 +35,13 @@ def users_form():
     return render_template("users/new.html", form = UserForm())
 
 @app.route("/users/<user_id>", methods=["POST"])
+@login_required
 def users_set_active(user_id):
-    u = User.query.get(user_id)
-    if u.active:
-        u.active = False
+    user = User.query.get(user_id)
+    if user.active:
+        user.active = False
     else:
-        u.active = True
+        user.active = True
     
     db.session().commit()
 
@@ -53,8 +54,8 @@ def users_create():
     if not form.validate():
         return render_template("users/new.html", form = form)
 
-    u = User(form.name.data,form.username.data ,form.password.data, form.job.data)
+    user = User(form.name.data,form.username.data ,form.password.data, form.job.data)
     
-    db.session().add(u)
+    db.session().add(user)
     db.session().commit()
     return redirect(url_for("users_index"))

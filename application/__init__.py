@@ -11,8 +11,11 @@ from application import views
 
 from application.auth import models
 from application.auth import views
-
 from application.auth.models import User
+
+from application.kiireellisyysluokka import models
+from application.kiireellisyysluokka import views
+
 from os import urandom
 app.config["SECRET_KEY"] = urandom(32)
 

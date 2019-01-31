@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<form method="POST" action="{{ url_for('kiireellisyysluokat_create') }}">
+  <table>
+    <tbody>
+      <tr>
+        <td>{{ form.name.label }}</td>  
+        <td>{{ form.name }}</td>
+        <td>
+          <ul>
+            {% for error in form.name.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ form.laakarit.label }}</td>  
+        <td>{{ form.laakarit }}</td>
+        <td>
+          <ul>
+            {% for error in form.laakarit.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ form.sairaanhoitajat.label }}</td>  
+        <td>{{ form.sairaanhoitajat }}</td>
+        <td>
+          <ul>
+            {% for error in form.sairaanhoitajat.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ form.perushoitajat.label }}</td>  
+        <td>{{ form.perushoitajat }}</td>
+        <td>
+          <ul>
+            {% for error in form.perushoitajat.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+        <td>
+            {{ form.submit }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+{% endblock %}
