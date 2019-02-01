@@ -21,7 +21,11 @@ lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja vo
 
 Sovellus herokussa 
 ## tunnus: admin salasana: admin
-tai voit luoda täysin uuden työntekiän.
+tai voit luoda täysin uuden työntekiän. 
+tällä hetkellä kuka tahansa voi luoda työntekiän ja kaikilla on hallinto oikeudet, mutta luodut viikot näkyvät vain luojalle ja useampi käyttäjä ei voi luoda samalle viikolle viikkoa.
+
+Kiireellisyysluokalla on täysi CRUD
+
 [sovellus](https://medi-tyovuorolista-harjoitus.herokuapp.com/)
 
 [Tietokanta hahmotelma](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/tietokantaHahmotelma.md)

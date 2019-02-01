@@ -13,6 +13,7 @@
 | 31.1 | sovelluksen siistimistä ja uudelleen nimeämistä | 0.5 | 0.25 |
 | 31.1 | lisäsin kiireellisyysluokan lisäämis ja listaus toiminnon ja yritin editointi ja poisto toimintoja mutta en ollut tyytyväinen ja poistin ne | 3 | 1 |
 | 31.1 | sql toimintoihin, viewsiin, html, jne toimintoihin tutustumista ja viikkojen luonti ja linkitys käyttäjään toiminnallisuus. paljon trial and erroria. | 4 | 2 |
+| 1.2 | formien validointeihin tarkennuksia kuten: ei saman käyttäjänimen käyttäjiä eikä viikkoja samoilla numeroilla ja vuosilla. CRUD kiireellisyysluokkiin | 3 | 1.5 |
 
-## aika projektin tekoon 12.25h
-## aika yhteensä: 22.5h
+## aika projektin tekoon 13.75h
+## aika yhteensä: 25.5h

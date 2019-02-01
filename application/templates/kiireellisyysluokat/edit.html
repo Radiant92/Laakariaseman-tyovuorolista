@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<h2>Muokkaa kiireellisyysluokkaa</h2>
+<form method="POST">
+  <table>
+    <tbody>
+      <tr>
+        <td>{{ form.laakarit.label }}</td>  
+        <td>{{ form.laakarit }}</td>
+        <td>
+          <ul>
+            {% for error in form.laakarit.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ form.sairaanhoitajat.label }}</td>  
+        <td>{{ form.sairaanhoitajat }}</td>
+        <td>
+          <ul>
+            {% for error in form.sairaanhoitajat.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ form.perushoitajat.label }}</td>  
+        <td>{{ form.perushoitajat }}</td>
+        <td>
+          <ul>
+            {% for error in form.perushoitajat.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+        <td>
+            {{ form.submit }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+{% endblock %}

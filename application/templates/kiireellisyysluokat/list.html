@@ -14,6 +14,16 @@
       <td>{{ kiireellisyysluokka.laakarit }}</td>
       <td>{{ kiireellisyysluokka.sairaanhoitajat }}</td>
       <td>{{ kiireellisyysluokka.perushoitajat }}</td>
+      <td>
+          <form method="POST" action="{{ url_for('kiireellisyysluokat_edit', id=kiireellisyysluokka.id) }}">
+            <input type="submit" value="muokkaa"/>
+          </form>
+      </td>
+      <td>
+          <form method="POST" action="{{ url_for('kiireellisyysluokat_delete', id=kiireellisyysluokka.id) }}">
+            <input type="submit" value="POISTA"/>
+          </form>
+      </td>
     </tr>
     {% endfor %}
   </table>
