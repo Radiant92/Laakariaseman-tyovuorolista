@@ -40,11 +40,16 @@ class User(Base):
 
     @staticmethod
     def find_users_under_40_hours_work():
-        stmt = text("SELECT * FROM Account"
+        stmt = text("SELECT Account.id, acc FROM Account"
                     " LEFT JOIN TuntiUser ON TuntiUser.account_id = Account.id"
                     " LEFT JOIN Tunti ON Tunti.id = TuntiUser.tunti_id"
-                    " GROUP BY Account.id")
+                    " WHERE (NOT Account.job='admin' AND Tunti.tila IS null)"
+                    " GROUP BY Account.id"
+                    " HAVING COUNT(Tunti.id) < 40")
 
         res = db.engine.execute(stmt)
+        response = []
+        for row in res:
+            response.append({"name":row[0], "job":row[1]})
 
-        return res
+        return response
