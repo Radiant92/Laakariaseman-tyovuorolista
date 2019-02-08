@@ -1,13 +1,10 @@
 from application import db
+from application.models import Base
 
-class User(db.Model):
+from sqlalchemy.sql import text
+
+class User(Base):
     __tablename__ = "account"
-
-    id = db.Column(db.Integer, primary_key=True)
-    date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
-    date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(),
-                              onupdate=db.func.current_timestamp())
-
 
     name = db.Column(db.String(144), nullable=False)
     username = db.Column(db.String(144), nullable=False)
@@ -16,7 +13,7 @@ class User(db.Model):
     active = db.Column(db.Boolean(), nullable=False)
     hallinto = db.Column(db.Boolean(), nullable=False)
 
-    viikot = db.relationship("Viikko", backref='account', lazy=True)
+    tunnit = db.relationship("TuntiUser", backref='account', lazy=True)
 
     def __init__(self, name, username, password, job):
         self.name = name
@@ -40,3 +37,19 @@ class User(db.Model):
 
     def is_admin(self):
         return self.hallinto
+
+    @staticmethod
+    def find_users_under_40_hours_work():
+        stmt = text("SELECT * FROM Account"
+                    " LEFT JOIN TuntiUser ON TuntiUser.account_id = Account.id"
+                    " LEFT JOIN Tunti ON Tunti.id = TuntiUser.tunti_id"
+                    " WHERE (Tunti.tila IS null)"
+                    " GROUP BY Account.id"
+                    " HAVING COUNT(Tunti.id) < 40")
+
+        res = db.engine.execute(stmt)
+        response = []
+        for row in res:
+            response.append({"name":row[3], "job":row[6]})
+
+        return response

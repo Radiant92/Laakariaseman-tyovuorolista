@@ -9,7 +9,7 @@ from application.viikko.forms import ViikkoForm
 @app.route("/viikot", methods=["GET"])
 @login_required
 def viikot_index():
-    return render_template("viikot/list.html", viikot = Viikko.query.filter(Viikko.account_id == current_user.id).order_by("vuosi desc").all())
+    return render_template("viikot/list.html", viikot = Viikko.query.all())
 
 @app.route("/viikot/new/")
 @login_required

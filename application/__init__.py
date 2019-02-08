@@ -26,6 +26,13 @@ from application.kiireellisyysluokka import views
 from application.viikko import models
 from application.viikko import views
 
+from application.tunti import models
+
+from application.tuntiuser import models
+
+from application.paiva import models
+
+
 from os import urandom
 app.config["SECRET_KEY"] = urandom(32)
 

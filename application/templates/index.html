@@ -1,6 +1,22 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <p>
-  </p>
+<p>
+
+</p>
+
+{% if needs_work is defined and current_user.is_admin %}
+<p>
+  Seuraavilla työntekijöillä ei ole viellä 40 työtuntia:
+</p>
+
+<ul>
+  {% for user in needs_work %}
+  <li>
+    {{user.name}} {{user.job}}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endif %}
 {% endblock %}
