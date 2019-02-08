@@ -43,13 +43,10 @@ class User(Base):
         stmt = text("SELECT * FROM Account"
                     " LEFT JOIN TuntiUser ON TuntiUser.account_id = Account.id"
                     " LEFT JOIN Tunti ON Tunti.id = TuntiUser.tunti_id"
-                    " WHERE NOT Account.job='admin'"
+                    " WHERE (NOT Account.job='admin' AND Tunti.tila IS null)"
                     " GROUP BY Account.id"
                     " HAVING COUNT(Tunti.id) < 40")
 
         res = db.engine.execute(stmt)
-        response = []
-        for row in res:
-            response.append({"name":row[3], "job":row[6]})
 
-        return response
+        return res
