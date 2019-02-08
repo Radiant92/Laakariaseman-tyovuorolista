@@ -40,7 +40,7 @@ class User(Base):
 
     @staticmethod
     def find_users_under_40_hours_work():
-        stmt = text("SELECT Account.id, acc FROM Account"
+        stmt = text("SELECT Account.id, Account.job FROM Account"
                     " LEFT JOIN TuntiUser ON TuntiUser.account_id = Account.id"
                     " LEFT JOIN Tunti ON Tunti.id = TuntiUser.tunti_id"
                     " WHERE (NOT Account.job='admin' AND Tunti.tila IS null)"
