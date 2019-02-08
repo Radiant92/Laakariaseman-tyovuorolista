@@ -1,23 +1,23 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <table>
-    <tr>
-      <th>Nimi</th>
-      <th>Ammatti</th>
-      <th>Tila</th>
-    </tr>
-    {% for user in users %}
-    <tr>
-      <td>{{ user.name }}</td>
-      <td>{{ user.job }}</td>
-      <td>{{ user.active }}</td>
-      <td>
-        <form method="POST" action="{{ url_for('users_set_active', user_id=user.id) }}">
-          <input type="submit" value="vaihda tila"/>
-        </form>
-      </td>
-    </tr>
-    {% endfor %}
-  </table>
+<table>
+  <tr>
+    <th>Nimi</th>
+    <th>Ammatti</th>
+    <th>Tila</th>
+  </tr>
+  {% for user in users %}
+  <tr>
+    <td>{{ user.name }}</td>
+    <td>{{ user.job }}</td>
+    <td>{{ user.active }}</td>
+    <td>
+      <form method="POST" action="{{ url_for('users_set_active', user_id=user.id) }}">
+        <input type="submit" value="vaihda tila" class="btn btn-primary" />
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
 {% endblock %}

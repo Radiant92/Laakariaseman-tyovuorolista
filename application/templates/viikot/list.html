@@ -1,16 +1,16 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <table>
-    <tr>
-      <th>vuosi</th>
-      <th>Viikon numero</th>
-    </tr>
-    {% for viikko in viikot %}
-    <tr>
-      <td>{{ viikko.vuosi }}</td>
-      <td>{{ viikko.numero }}</td>
-    </tr>
-    {% endfor %}
-  </table>
+<table>
+  <tr>
+    <th>vuosi</th>
+    <th>Viikon numero</th>
+  </tr>
+  {% for viikko in viikot %}
+  <tr>
+    <td>{{ viikko.vuosi }}</td>
+    <td>{{ viikko.numero }}</td>
+  </tr>
+  {% endfor %}
+</table>
 {% endblock %}

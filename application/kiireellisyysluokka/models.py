@@ -8,7 +8,6 @@ class Kiireellisyysluokka(Base):
     sairaanhoitajat = db.Column(db.Integer, nullable=False)
     perushoitajat = db.Column(db.Integer, nullable=False)
     
-    tunnit = db.relationship("Tunti", backref='kiireellisyysluokka', lazy=True)
 
     def __init__(self, name, laakarit, sairaanhoitajat, perushoitajat):
         self.name = name

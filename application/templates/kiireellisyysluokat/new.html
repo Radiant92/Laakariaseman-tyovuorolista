@@ -1,57 +1,38 @@
 {% extends "layout.html" %}
-  
+
 {% block body %}
 <form method="POST" action="{{ url_for('kiireellisyysluokat_create') }}">
-  <table>
-    <tbody>
-      <tr>
-        <td>{{ form.name.label }}</td>  
-        <td>{{ form.name }}</td>
-        <td>
-          <ul>
-            {% for error in form.name.errors %}
-            <li>{{ error }}</li>
-            {% endfor %}
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>{{ form.laakarit.label }}</td>  
-        <td>{{ form.laakarit }}</td>
-        <td>
-          <ul>
-            {% for error in form.laakarit.errors %}
-            <li>{{ error }}</li>
-            {% endfor %}
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>{{ form.sairaanhoitajat.label }}</td>  
-        <td>{{ form.sairaanhoitajat }}</td>
-        <td>
-          <ul>
-            {% for error in form.sairaanhoitajat.errors %}
-            <li>{{ error }}</li>
-            {% endfor %}
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>{{ form.perushoitajat.label }}</td>  
-        <td>{{ form.perushoitajat }}</td>
-        <td>
-          <ul>
-            {% for error in form.perushoitajat.errors %}
-            <li>{{ error }}</li>
-            {% endfor %}
-          </ul>
-        </td>
-        <td>
-            {{ form.submit }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="form-group">
+    {{ form.name.label(class="col-sm-2 col-form-label") }}
+    {{ form.name(class="form-control") }}
+    <ul>
+      {% for error in form.name.errors %}
+      <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+    {{ form.laakarit.label(class="col-sm-2 col-form-label") }}
+    {{ form.laakarit(class="form-control") }}
+    <ul>
+      {% for error in form.laakarit.errors %}
+      <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+    {{ form.sairaanhoitajat.label(class="col-sm-2 col-form-label") }}
+    {{ form.sairaanhoitajat(class="form-control") }}
+
+    <ul>
+      {% for error in form.sairaanhoitajat.errors %}
+      <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+    {{ form.perushoitajat.label(class="col-sm-2 col-form-label") }}
+    {{ form.perushoitajat(class="form-control") }}
+    <ul>
+      {% for error in form.perushoitajat.errors %}
+      <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+    {{ form.submit(class="btn btn-primary") }}
+  </div>
 </form>
 {% endblock %}

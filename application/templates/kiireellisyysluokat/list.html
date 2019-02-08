@@ -1,30 +1,30 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <table>
-    <tr>
-      <th>Nimi</th>
-      <th>Lääkärien määrä</th>
-      <th>Sairaanhoitajien määrä</th>
-      <th>Perushoitajien määrä</th>
-    </tr>
-    {% for kiireellisyysluokka in kiireellisyysluokat %}
-    <tr>
-      <td>{{ kiireellisyysluokka.name }}</td>
-      <td>{{ kiireellisyysluokka.laakarit }}</td>
-      <td>{{ kiireellisyysluokka.sairaanhoitajat }}</td>
-      <td>{{ kiireellisyysluokka.perushoitajat }}</td>
-      <td>
-          <form method="POST" action="{{ url_for('kiireellisyysluokat_edit', id=kiireellisyysluokka.id) }}">
-            <input type="submit" value="muokkaa"/>
-          </form>
-      </td>
-      <td>
-          <form method="POST" action="{{ url_for('kiireellisyysluokat_delete', id=kiireellisyysluokka.id) }}">
-            <input type="submit" value="POISTA"/>
-          </form>
-      </td>
-    </tr>
-    {% endfor %}
-  </table>
+<table>
+  <tr>
+    <th>Nimi</th>
+    <th>Lääkärien määrä</th>
+    <th>Sairaanhoitajien määrä</th>
+    <th>Perushoitajien määrä</th>
+  </tr>
+  {% for kiireellisyysluokka in kiireellisyysluokat %}
+  <tr>
+    <td>{{ kiireellisyysluokka.name }}</td>
+    <td>{{ kiireellisyysluokka.laakarit }}</td>
+    <td>{{ kiireellisyysluokka.sairaanhoitajat }}</td>
+    <td>{{ kiireellisyysluokka.perushoitajat }}</td>
+    <td>
+      <form method="POST" action="{{ url_for('kiireellisyysluokat_edit', id=kiireellisyysluokka.id) }}">
+        <input type="submit" value="muokkaa" class="btn btn-warning" />
+      </form>
+    </td>
+    <td>
+      <form method="POST" action="{{ url_for('kiireellisyysluokat_delete', id=kiireellisyysluokka.id) }}">
+        <input type="submit" value="POISTA" class="btn btn-danger" />
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
 {% endblock %}

@@ -14,6 +14,10 @@
 | 31.1 | lisäsin kiireellisyysluokan lisäämis ja listaus toiminnon ja yritin editointi ja poisto toimintoja mutta en ollut tyytyväinen ja poistin ne | 3 | 1 |
 | 31.1 | sql toimintoihin, viewsiin, html, jne toimintoihin tutustumista ja viikkojen luonti ja linkitys käyttäjään toiminnallisuus. paljon trial and erroria. | 4 | 2 |
 | 1.2 | formien validointeihin tarkennuksia kuten: ei saman käyttäjänimen käyttäjiä eikä viikkoja samoilla numeroilla ja vuosilla. CRUD kiireellisyysluokkiin | 3 | 1.5 |
+| 6.2 | Loin luokat paiva, tunti ja TuntiUser | 2 | 1 |
+| 8.2 | loin yhteydet luokkien välille | 3 | 2 |
+| 8.2 | bootsrappia, sql kysely ja heroku/postgre sähläystä | 4 | 2 |
+| 8.2 | bootrapilla formit ja muutenkin ulkoasun overhaul | 2 | 2 |
 
-## aika projektin tekoon 13.75h
-## aika yhteensä: 25.5h
+## aika projektin tekoon 20.75h
+## aika yhteensä: 36.5h

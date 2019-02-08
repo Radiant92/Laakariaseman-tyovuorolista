@@ -7,7 +7,6 @@ class Tunti(BaseTila):
 
     userit = db.relationship("TuntiUser", backref='tunti', lazy=True)
     
-    kiireellisyysluokka_id = db.Column(db.Integer, db.ForeignKey('kiireellisyysluokka.id'), nullable=False)
     paiva_id = db.Column(db.Integer, db.ForeignKey('paiva.id'), nullable=False)
 
     def __init__(self, tunti):
