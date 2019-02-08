@@ -50,6 +50,7 @@ class User(Base):
         res = db.engine.execute(stmt)
         response = []
         for row in res:
-            response.append({"name":row[3], "job":row[6]})
+            if row[6] != 'admin':
+                response.append({"name":row[3], "job":row[6]})
 
         return response
