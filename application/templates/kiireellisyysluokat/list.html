@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<table>
+<table class="table table-hover">
   <tr>
-    <th>Nimi</th>
-    <th>Lääkärien määrä</th>
-    <th>Sairaanhoitajien määrä</th>
-    <th>Perushoitajien määrä</th>
+    <th scope="col">Nimi</th>
+    <th scope="col">Lääkärien määrä</th>
+    <th scope="col">Sairaanhoitajien määrä</th>
+    <th scope="col">Perushoitajien määrä</th>
   </tr>
   {% for kiireellisyysluokka in kiireellisyysluokat %}
   <tr>

@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<table>
+<table class="table table-hover">
+
   <tr>
-    <th>Nimi</th>
-    <th>Ammatti</th>
-    <th>Tila</th>
+    <th scope="col">Nimi</th>
+    <th scope="col">Ammatti</th>
+    <th scope="col">Tila</th>
   </tr>
   {% for user in users %}
   <tr>
@@ -19,5 +20,6 @@
     </td>
   </tr>
   {% endfor %}
+
 </table>
 {% endblock %}

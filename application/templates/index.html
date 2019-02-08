@@ -9,14 +9,20 @@
 <p>
   Seuraavilla työntekijöillä ei ole viellä 40 työtuntia:
 </p>
+<table class="table table-hover">
 
-<ul>
-  {% for user in needs_work %}
-  <li>
-    {{user.name}} {{user.job}}
-  </li>
-  {% endfor %}
-</ul>
+  <tr>
+    <th scope="col">Nimi</th>
+    <th scope="col">Ammatti</th>
+  </tr>
+  <ul>
+    {% for user in needs_work %}
+    <tr>
+      <td>{{ user.name }}</td>
+      <td>{{ user.job }}</td>
+    </tr>
+    {% endfor %}
+  </ul>
 
-{% endif %}
-{% endblock %}
+  {% endif %}
+  {% endblock %}
