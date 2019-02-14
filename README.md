@@ -18,7 +18,7 @@ lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja vo
 - Työvuorolistan listaus
 
 ## tunnus: admin, salasana: admin 
-tällä hetkellä kuka tahansa voi luoda työntekijän ja kaikilla on hallinto oikeudet, muttei voi luoda samalle viikolle viikkoa.
+Vain admin voi luoda työntekijän joka saa tällä hetkellä hallinto oikeuden, muttei voi luoda samalle viikolle viikkoa.
 
 Kiireellisyysluokalla on täysi CRUD
 
