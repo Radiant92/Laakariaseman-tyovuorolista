@@ -11,8 +11,7 @@ class User(Base):
     password = db.Column(db.String(144), nullable=False)
     job = db.Column(db.String(144), nullable=False)
     active = db.Column(db.Boolean(), nullable=False)
-    hallinto = db.Column(db.Boolean(), nullable=False)
-
+    
     tunnit = db.relationship("TuntiUser", backref='account', lazy=True)
 
     def __init__(self, name, username, password, job):
@@ -21,7 +20,6 @@ class User(Base):
         self.password = password
         self.job = job
         self.active = True
-        self.hallinto = True
 
     def get_id(self):
         return self.id
@@ -36,17 +34,22 @@ class User(Base):
         return True
 
     def is_admin(self):
-        return self.hallinto
+        if(self.job == "ADMIN"):
+            return True
+        else:
+            return False
+    
+    def roles(self):
+        return [self.job]
 
     @staticmethod
     def find_users_under_40_hours_work():
         stmt = text("SELECT Account.name, Account.job FROM Account"
                     " LEFT JOIN TuntiUser ON TuntiUser.account_id = Account.id"
                     " LEFT JOIN Tunti ON Tunti.id = TuntiUser.tunti_id"
-                    " WHERE (NOT Account.job='admin' AND Tunti.tila IS null)"
+                    " WHERE (NOT Account.job='ADMIN' AND Tunti.tila IS null)"
                     " GROUP BY Account.id"
                     " HAVING COUNT(Tunti.id) < 40")
-
         res = db.engine.execute(stmt)
         response = []
         for row in res:

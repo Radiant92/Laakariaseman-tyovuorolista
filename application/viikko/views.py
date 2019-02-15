@@ -1,23 +1,25 @@
 from flask import render_template, request, redirect, url_for
-from flask_login import login_required, current_user
+from flask_login import current_user
+
 from sqlalchemy import desc
-from application import app, db
+
+from application import app, db, login_required
 from application.viikko.models import Viikko
 from application.viikko.forms import ViikkoForm
 
 
 @app.route("/viikot", methods=["GET"])
-@login_required
+@login_required(role="ANY")
 def viikot_index():
     return render_template("viikot/list.html", viikot = Viikko.query.all())
 
 @app.route("/viikot/new/")
-@login_required
+@login_required(role="ADMIN")
 def viikot_form():
     return render_template("viikot/new.html", form = ViikkoForm())
 
 @app.route("/viikot", methods=["POST"])
-@login_required
+@login_required(role="ADMIN")
 def viikot_create():
     form = ViikkoForm(request.form)
 

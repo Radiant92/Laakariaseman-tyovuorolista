@@ -1,21 +1,22 @@
 from flask import render_template, request, redirect, url_for
-from flask_login import login_required
-from application import app, db
+from flask_login import current_user
+
+from application import app, db, login_required
 from application.kiireellisyysluokka.models import Kiireellisyysluokka
 from application.kiireellisyysluokka.forms import KiireellisyysluokkaForm, KiireellisyysluokkaEditForm
 
 @app.route("/kiireellisyysluokat", methods=["GET"])
-@login_required
+@login_required(role="ADMIN")
 def kiireellisyysluokat_index():
     return render_template("kiireellisyysluokat/list.html", kiireellisyysluokat = Kiireellisyysluokka.query.all())
 
 @app.route("/kiireellisyysluokat/new/")
-@login_required
+@login_required(role="ADMIN")
 def kiireellisyysluokat_form():
     return render_template("kiireellisyysluokat/new.html", form = KiireellisyysluokkaForm())
 
 @app.route("/kiireellisyysluokat", methods=["POST"])
-@login_required
+@login_required(role="ADMIN")
 def kiireellisyysluokat_create():
     form = KiireellisyysluokkaForm(request.form)
 
@@ -29,7 +30,7 @@ def kiireellisyysluokat_create():
     return redirect(url_for("kiireellisyysluokat_index"))
 
 @app.route("/kiireellisyysluokat/<int:id>", methods=["GET", "POST"])
-@login_required
+@login_required(role="ADMIN")
 def kiireellisyysluokat_edit(id):
     luokka = Kiireellisyysluokka.query.filter(Kiireellisyysluokka.id==id).first()
     if luokka:
@@ -45,7 +46,7 @@ def kiireellisyysluokat_edit(id):
         return redirect(url_for("kiireellisyysluokat_index"))
 
 @app.route("/kiireellisyysluokat/delete/<int:id>", methods=["GET", "POST"])
-@login_required
+@login_required(role="ADMIN")
 def kiireellisyysluokat_delete(id):
     luokka = Kiireellisyysluokka.query.filter(Kiireellisyysluokka.id==id).first()
     if luokka:
