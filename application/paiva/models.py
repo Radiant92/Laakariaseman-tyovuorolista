@@ -19,3 +19,8 @@ class Paiva(BaseTila):
             p.paiva_id = self.id
             db.session().add(p)
         db.session().commit()
+
+    def get_tunti(self, i):
+        for tunti in self.tunnit:
+            if tunti.tunti == i:
+                return tunti

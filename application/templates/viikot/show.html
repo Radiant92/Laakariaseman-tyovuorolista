@@ -22,10 +22,10 @@
             <th>{{ i }}:00</th>
             {% endif %}
             {% for paiva in paivat %}
-            {% if paiva.tunnit[i].get_luokka() is none %}
-            <td><a href="{{ url_for('tunnit_show', id=paiva.tunnit[i].id) }}" style="color: red;">luokaton</a></td>
+            {% if paiva.get_tunti(i).get_luokka() is none %}
+            <td><a href="{{ url_for('tunnit_show', id=paiva.get_tunti(i).id) }}" style="color: red;">luokaton</a></td>
             {% else %}
-            <td><a href="{{ url_for('tunnit_show', id=paiva.tunnit[i].id) }}">{{ paiva.tunnit[i].get_luokka().name }}</a></td>
+            <td><a href="{{ url_for('tunnit_show', id=paiva.get_tunti(i).id) }}">{{ paiva.get_tunti(i).get_luokka().name }}</a></td>
             {% endif %}
             {% endfor %}
         </tr>
