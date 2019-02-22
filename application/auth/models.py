@@ -47,7 +47,7 @@ class User(Base):
         stmt = text("SELECT Account.name, Account.job FROM Account"
                     " LEFT JOIN TuntiUser ON TuntiUser.account_id = Account.id"
                     " LEFT JOIN Tunti ON Tunti.id = TuntiUser.tunti_id"
-                    " WHERE (NOT Account.job='ADMIN' AND Tunti.tila IS null)"
+                    " WHERE (NOT Account.job='ADMIN')"
                     " GROUP BY Account.id"
                     " HAVING COUNT(Tunti.id) < 40")
         res = db.engine.execute(stmt)
