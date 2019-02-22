@@ -52,7 +52,7 @@ def login_required(role="ANY"):
             return fn(*args, **kwargs)
         return decorated_view
     return wrapper
-
+ 
 
 from application import views
 
