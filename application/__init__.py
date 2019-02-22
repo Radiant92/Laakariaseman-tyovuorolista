@@ -79,5 +79,8 @@ from application.paiva import views
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
- 
-db.create_all()
+
+try:
+    db.create_all()
+except:
+    pass
