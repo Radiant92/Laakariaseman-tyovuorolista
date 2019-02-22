@@ -24,9 +24,7 @@ Kiireellisyysluokalla on täysi CRUD
 
 # Linkit
 
-Sovellus herokussa, mutta sovellus ei käynnisty herokun kautta koska heroku ei anna sovellukseni tallentaa sinne tietokanta tauluja olen kokeillut tuhota ja luoda databasen uudelleen n. 10 kertaa ja rollbakkia sekä useita uudelleen deployayksia.
-try/castchin poisto ei myöskään auttanut.
-
+Sovellus herokussa
 [sovellus](https://medi-tyovuorolista-harjoitus.herokuapp.com/)
 
 [Tietokanta hahmotelma](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/tietokantaHahmotelma.md)
