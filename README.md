@@ -24,10 +24,7 @@ Kiireellisyysluokalla on täysi CRUD
 
 # Linkit
 
-Sovellus herokussa, mutta sovellus ei käynnisty herokun kautta koska heroku ei anna sovellukseni tallentaa sinne tietokantoja
-eikä tunnista ympäristömuuttujiani, olen kokeillut tuhota ja luoda databasen uudelleen n. 10 kertaa ja rollbakkia sekä useita uudelleen deployayksia. nyt postgre tai heroku ei enää anna minun luoda databasea DATABASE_URL vaan tekee siitä aina undefinedin joten en enää pääse tietokantaani.
-try/castchin poisto ei myöskään auttanut.
-
+Sovellus herokussa
 [sovellus](https://medi-tyovuorolista-harjoitus.herokuapp.com/)
 
 [Tietokanta hahmotelma](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/tietokantaHahmotelma.md)
