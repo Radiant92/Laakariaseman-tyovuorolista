@@ -83,4 +83,4 @@ def load_user(user_id):
 try: 
     db.create_all()
 except:
-    db.create_all()
+    pass
