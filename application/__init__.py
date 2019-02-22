@@ -52,7 +52,7 @@ def login_required(role="ANY"):
             return fn(*args, **kwargs)
         return decorated_view
     return wrapper
- 
+
 
 from application import views
 
@@ -80,4 +80,7 @@ from application.paiva import views
 def load_user(user_id):
     return User.query.get(user_id)
 
-db.create_all()
+try: 
+    db.create_all()
+except:
+    pass
