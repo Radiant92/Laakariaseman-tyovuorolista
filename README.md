@@ -24,7 +24,7 @@ Kiireellisyysluokalla on täysi CRUD
 
 # Linkit
 
-Sovellus herokussa 
+Sovellus herokussa EI TOIMI KOSKA HEROKU EI ANNA KÄYTTÄÄ TÄLLÄ HETKELLÄ TIETOKANTOJA.
 [sovellus](https://medi-tyovuorolista-harjoitus.herokuapp.com/)
 
 [Tietokanta hahmotelma](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/tietokantaHahmotelma.md)
