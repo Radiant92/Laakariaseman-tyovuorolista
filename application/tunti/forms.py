@@ -15,9 +15,6 @@ class TuntiForm(FlaskForm):
         ident = (str(i.id),i.name)
         lista.append(ident)
     luokka = SelectField("valitse kiireellisyysluokka", choices=lista)
-    print("KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
-    print(luokka)
-    print("KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
     submit = SubmitField("Vahvista")
 
     class Meta:
