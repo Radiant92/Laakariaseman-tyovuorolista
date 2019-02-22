@@ -1,7 +1,7 @@
 from application import db
-from application.models import BaseTila
+from application.models import Base
 from application.kiireellisyysluokka.models import Kiireellisyysluokka
-class Tunti(BaseTila):
+class Tunti(Base):
     __tablename__ = "tunti"
 
     tunti = db.Column(db.Integer, nullable=False)
