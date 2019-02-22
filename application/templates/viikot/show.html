@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    <h1>Viikko {{ viikko.numero }} Vuosi {{ viikko.vuosi }}</h1>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>kello</th>
+            {% for paiva in paivat %}
+            <th>{{ paiva.name }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in range(0,24) %}
+        <tr>
+            {% if 10 > i %}
+            <th>0{{ i }}:00</th>
+            {% else %}
+            <th>{{ i }}:00</th>
+            {% endif %}
+            {% for paiva in paivat %}
+            {% if paiva.tunnit[i].get_luokka() is none %}
+            <td><a href="{{ url_for('tunnit_show', id=paiva.tunnit[i].id) }}" style="color: red;">luokaton</a></td>
+            {% else %}
+            <td><a href="{{ url_for('tunnit_show', id=paiva.tunnit[i].id) }}">{{ paiva.tunnit[i].get_luokka().name }}</a></td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock %}

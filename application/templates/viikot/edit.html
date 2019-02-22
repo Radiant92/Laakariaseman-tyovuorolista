@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form method="POST">
+    <div class="form-group">
+        {{ form.vuosi.label }}
+        {{ form.vuosi(class="form-control") }}
+        <ul>
+            {% for error in form.vuosi.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {{ form.numero.label }}
+        {{ form.numero(class="form-control") }}
+        <ul>
+            {% for error in form.numero.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {{ form.submit(class="btn btn-primary") }}
+</form>
+{% endblock %}
