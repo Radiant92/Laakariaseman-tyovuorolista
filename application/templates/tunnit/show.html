@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    {% if 10 > tunti.tunti %}
+    <h1>Tunti: 0{{ tunti.tunti }}:00</h1>
+    {% else %}
+    <h1>Tunti: {{ tunti.tunti }}:00</h1>
+    {% endif %}
+    {% if tunti.get_luokka() is none %}
+    <h1>Kiireellisyysluokka: {{ tunti.get_luokka() }}</h1>
+    {% else %}
+    <h1>Kiireellisyysluokka: {{ tunti.get_luokka().name }}</h1>
+    {% endif %}
+    <td>
+        <form method="POST" action="{{ url_for('tunnit_edit', id=tunti.id) }}">
+            <input type="submit" value="muokkaa" class="btn btn-warning" />
+        </form>
+    </td>
+</div>
+<table class="table table-hover">
+
+    <tr>
+        <th scope="col">Nimi</th>
+        <th scope="col">Ammatti</th>
+    </tr>
+    {% for user in tunti.users %}
+    <tr>
+        <td>{{ user.name }}</td>
+        <td>{{ user.job }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

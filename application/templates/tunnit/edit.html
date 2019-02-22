@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h2>Muokkaa Tuntia</h2>
+<form method="POST">
+    <div class="form-group">
+        {{ form.luokka.label(class="col-sm-2 col-form-label") }}
+        {{ form.luokka(class="custom-select my-1 mr-sm-2") }}
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
+{% endblock %}

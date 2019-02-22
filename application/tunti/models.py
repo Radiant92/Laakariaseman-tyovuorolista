@@ -1,5 +1,6 @@
 from application import db
 from application.models import BaseTila
+from application.kiireellisyysluokka.models import Kiireellisyysluokka
 class Tunti(BaseTila):
     __tablename__ = "tunti"
 
@@ -9,6 +10,17 @@ class Tunti(BaseTila):
     
     paiva_id = db.Column(db.Integer, db.ForeignKey('paiva.id'), nullable=False)
 
+    luokka_id = db.Column(db.Integer, db.ForeignKey('kiireellisyysluokka.id'), nullable=True)
+
     def __init__(self, tunti):
         self.tunti = tunti
-        self.tila = False
+
+    
+    def get_luokka(self):
+        luokka = Kiireellisyysluokka.query.filter(Kiireellisyysluokka.id==self.luokka_id).first()
+        return luokka
+    
+    @staticmethod
+    def set_luokka(self, lid):
+        self.luokka_id = int(lid)
+        db.session().commit()
