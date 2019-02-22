@@ -7,10 +7,9 @@ class Kiireellisyysluokka(Base):
     laakarit = db.Column(db.Integer, nullable=False)
     sairaanhoitajat = db.Column(db.Integer, nullable=False)
     perushoitajat = db.Column(db.Integer, nullable=False)
-    
 
     def __init__(self, name, laakarit, sairaanhoitajat, perushoitajat):
         self.name = name
         self.laakarit = laakarit
         self.sairaanhoitajat = sairaanhoitajat
-        self.perushoitajat = perushoitajat
+        self.perushoitajat = perushoitajat 
