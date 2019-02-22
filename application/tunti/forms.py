@@ -10,7 +10,6 @@ from application.kiireellisyysluokka.models import Kiireellisyysluokka
 class TuntiForm(FlaskForm):
     luokat = Kiireellisyysluokka.query.all()
     lista = []
-    lista.append(('','tyhjä'))
     for i in luokat:
         ident = (str(i.id),i.name)
         lista.append(ident)
