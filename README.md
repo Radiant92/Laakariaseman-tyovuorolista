@@ -26,8 +26,7 @@ Kiireellisyysluokalla on täysi CRUD
 
 [Käyttöohjeet](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/kayttoohje.md)
 
-Sovellus herokussa
-[sovellus](https://medi-tyovuorolista-harjoitus.herokuapp.com/)
+[Sovellus herokussa](https://medi-tyovuorolista-harjoitus.herokuapp.com/)
 
 [Tietokanta hahmotelma](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/tietokantaHahmotelma.md)
 
