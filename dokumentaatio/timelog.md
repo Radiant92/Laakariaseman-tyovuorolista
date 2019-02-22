@@ -21,6 +21,9 @@
 | 14.2 | viilailua ja pieniä muutoksia | 2 | 1 |
 | 22.2 | Viikon, tunnin, ja päivän toteuttaminen | 12 | 7 |
 | 22.2 | dokumentaation täydennys ja postgren selvittäminen | 4 | 4 |
+| 22.2 | Tietokantojen kirjoitus uudestaan manuaalisesti | 2 | 1 |
+| 22.2 | Sovelluksen muokkaus herokuun toimivaksi | 1 | 1 |
+| 22.2 | Dokumentaatio "käyttöohje" | 1 | 1 |
 
-## aika projektin tekoon 32.75h
-## aika yhteensä: 54.5h
+## aika projektin tekoon 35.75h
+## aika yhteensä: 59.5h
