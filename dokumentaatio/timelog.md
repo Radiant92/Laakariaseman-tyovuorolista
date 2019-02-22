@@ -18,6 +18,9 @@
 | 8.2 | loin yhteydet luokkien välille | 3 | 2 |
 | 8.2 | bootsrappia, sql kysely ja heroku/postgre sähläystä | 4 | 2 |
 | 8.2 | bootrapilla formit ja muutenkin ulkoasun overhaul | 2 | 2 |
+| 14.2 | viilailua ja pieniä muutoksia | 2 | 1 |
+| 22.2 | Viikon, tunnin, ja päivän toteuttaminen | 12 | 7 |
+| 22.2 | dokumentaation täydennys ja postgren selvittäminen | 4 | 4 |
 
-## aika projektin tekoon 20.75h
-## aika yhteensä: 36.5h
+## aika projektin tekoon 32.75h
+## aika yhteensä: 54.5h
