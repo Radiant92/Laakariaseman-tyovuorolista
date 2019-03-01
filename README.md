@@ -19,6 +19,7 @@ lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja vo
 
 ## tunnus: admin, salasana: admin 
 Vain admin voi luoda työntekijän, kiireellisyys luokan ja työviikon.
+Vieras tunnus: **guest, guest**
 
 # Linkit
 
