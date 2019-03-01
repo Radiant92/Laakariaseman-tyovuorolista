@@ -1,6 +1,7 @@
 from application import db
 from application.models import BaseTila
 from application.tunti.models import Tunti
+from sqlalchemy.sql import text
 class Paiva(BaseTila):
     __tablename__ = "paiva"
 
@@ -24,3 +25,16 @@ class Paiva(BaseTila):
         for tunti in self.tunnit:
             if tunti.tunti == i:
                 return tunti
+
+    def get_is_empty_for_user(self, user):
+        stmt = text("SELECT account.username, paiva.id From paiva, tunti, tunti_user, account "
+                    "WHERE paiva.id = tunti.paiva_id "
+                    "AND tunti_user.tunti_id = tunti.id "
+                    "AND account.id = tunti_user.account_id "
+                    "GROUP BY tunti.id")
+        res = db.engine.execute(stmt)
+        for row in res:
+            if row[0] == user.username and self.id == row[1]:
+                return True
+        return False
+
