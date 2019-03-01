@@ -4,10 +4,10 @@
 <div class="container">
     <h1>Viikko {{ viikko.numero }} Vuosi {{ viikko.vuosi }}</h1>
     <h2>{{ current_user.name }}</h2>
-    {% if current_user.job == 'ADMIN' %}
+    
     <h4 style="color: green">Vihreät tunnit sisältävät riittävästi työntekijöitä</h4>
     <h4 style="color:rgb(255, 0, 255)">Purppuroissa tunneissa on ylimiehitystä</h4>
-    
+    {% if current_user.job == 'ADMIN' %}
     <h4 style="color:red">Punaiset tunnit eivät sisällä riittävästi työntekijöitä, täten näitä tunteja ei lasketa työntekijän työtunteihin eikä ne ole heille näkyvissä!</h4>
     {% endif %}
 </div>
@@ -37,8 +37,10 @@
             <td><a href="{{ url_for('tunnit_show', id=paiva.get_tunti(i).id) }}" style="color: green;">luokaton</a></td>
             {% elif paiva.get_tunti(i).tila > 1 %}
             <td><a href="{{ url_for('tunnit_show', id=paiva.get_tunti(i).id) }}" style="color:rgb(255, 0, 255);">luokaton</a></td>
-            {% else %}
+            {% elif current_user.job == 'ADMIN' %}
             <td><a href="{{ url_for('tunnit_show', id=paiva.get_tunti(i).id) }}" style="color: red;">luokaton</a></td>
+            {% else %}
+            <td> - </td>
             {% endif %}
             {% else %}
             {% if paiva.get_tunti(i).tila == 1 %}
@@ -47,9 +49,11 @@
             {% elif paiva.get_tunti(i).tila > 1 %}
             <td><a href="{{ url_for('tunnit_show', id=paiva.get_tunti(i).id) }}"
                     style='color:rgb(255, 0, 255);'>{{ paiva.get_tunti(i).get_luokka().name }}</a></td>
-            {% else %}
+            {% elif current_user.job == 'ADMIN' %}
             <td><a href="{{ url_for('tunnit_show', id=paiva.get_tunti(i).id) }}"
                     style='color:red;'>{{ paiva.get_tunti(i).get_luokka().name }}</a></td>
+            {% else %}
+            <td> - </td>        
             {% endif %}
             {% endif %}
             {% endif %}
