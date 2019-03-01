@@ -1,9 +1,9 @@
 # Lääkariaseman työvuorolista
 
-Sovelluksen avulla hallitaan lääkärien, sairaanhoitajien ja perushoitajien työvuoroja.
-Sovelluksen hallitsia voi hallita työntekjöitä ja kiireellisyysluokkia.
-Sovellus antaa sen hallitsijan asettaa kullekkin viikonpäivän tunnille oman kiirreellisyys luokan ja sen vaatimat työntekijät.
-kiireellisyysluokille voidaan määritellä tarvittava minimivahvuus jonka alittamista työviikkolistassa sovellus ei salli.
+Sovelluksen avulla hallitaan lääkärien, sairaanhoitajien ja perushoitajien työvuorolistoja.
+Sovelluksen hallitsia (admin) voi luoda työviikkoja ja asettaa näiden viikkojen tunneille kiireellisyysluokkia ja työntekijöitä.
+Kiireellisyysluokka määrittää monenko työntekijän minimivahvuus kultakin alalta tarvitaan tunnille, tämän alittavaa tuntia ei näytetä työntekijöille. 
+Halutessaan hallitsija voi jättää tunnin luokittelematta josta näkyy työvuorossa vihreä teksti "luokaton"
 
 Työntekijä voi tarkastella omia työviikkojaan omasta arkistostaan
 lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja voi tuurata vain perushoitajaa. 
@@ -14,13 +14,11 @@ lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja vo
 - Työntekiän hallinta
 - Kiireellisyysluokkien hallinta
 - Työvuorolistan hallinta
-- Henkilökohtainen työvuoro lista
+- Käyttäjät näkevät oman työvuoro listansa
 - Työvuorolistan listaus
 
 ## tunnus: admin, salasana: admin 
-Vain admin voi luoda työntekijän joka saa tällä hetkellä hallinto oikeuden, muttei voi luoda samalle viikolle viikkoa.
-
-Kiireellisyysluokalla on täysi CRUD
+Vain admin voi luoda työntekijän, kiireellisyys luokan ja työviikon.
 
 # Linkit
 
