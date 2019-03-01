@@ -64,7 +64,7 @@
 
 - Katsella työviikkoja arkistosta (complete)
 
-- Kirjauduttua nähdä listan viikkoja joissa on ylimiehitystä (complete)
+- Kirjauduttua haluan nähdä listan viikkoja joissa on ylimiehitystä (complete)
 
 ```
   ("SELECT distinct viikko.id, count(tunti.id) "
@@ -79,13 +79,17 @@
 
 - Katsella omia työviikkojani arkistosta (complete)
 ```
-  ("SELECT distinct account.username, viikko.id "
-                    "FROM viikko, paiva, tunti, tunti_user, account "                    
-                    "WHERE viikko.id = paiva.viikko_id "                    
-                    "AND paiva.id = tunti.paiva_id "                    
-                    "AND tunti_user.tunti_id = tunti.id "                    
-                    "AND account.id = tunti_user.account_id")
+  "SELECT count(tunti.id), viikko.id, account.username "
+		                "From viikko, paiva, tunti, tunti_user, account "
+                    "WHERE viikko.id = paiva.viikko_id "
+                    "AND paiva.id = tunti.paiva_id "
+                    "AND tunti_user.tunti_id = tunti.id "
+                    "AND account.id = tunti_user.account_id "
+		                "AND tunti.tila > 0 "
+		                "GROUP BY viikko.id, account.username"
 ```
+- haluan että arkistossa näkyy myös montako tuntia minulla on siinä viikossa (complete) 
+
 - En halua nähdä päiviä tai tunteja, jotka eivät kuulu minulle (complete)
 ```
 "SELECT account.id, paiva.id From paiva, tunti, tunti_user, account "
