@@ -38,14 +38,34 @@
 
 - Asettaa jokaisen työviikon jokaisen päivän jokaiseen tuntiin oman kiireellisyysluokan (complete)
 
-- Asettaa kiireellisyysluokkiin työntekijät 
+- Asettaa tuntiin työntekijät (complete) 
 
-- Julkaista työviikon
+- Julkaista työviikon (complete)
 
-- Viikkoa ei pysty julkaista jos sen kiireellisyysluokkien vaatimukset ei ole täytetty
+- Viikkoa ei julkaista työntekijöille jos sen kiireellisyysluokkien vaatimukset ei ole täytetty (complete)
 
 - Katsella työviikkoja arkistosta (complete)
 
+- Kirjauduttua nähdä listan viikkoja joissa on ylimiehitystä (complete)
+  ("SELECT distinct viikko.id, count(tunti.id) FROM  tunti, paiva, viikko "
+                    "WHERE viikko.id = paiva.viikko_id "
+                    "AND paiva.id = tunti.paiva_id "
+                    "AND tunti.tila > 1 "
+                    "GROUP BY viikko.id "
+                    "ORDER BY viikko.id")
+
 ### Työntekijänä haluan pystyä:
 
-- katsella omia työviikkojani arkistosta
+- Katsella omia työviikkojani arkistosta (complete)
+  ("SELECT distinct account.username, viikko.id From viikko, paiva, tunti, tunti_user, account "
+                    "WHERE viikko.id = paiva.viikko_id "
+                    "AND paiva.id = tunti.paiva_id "
+                    "AND tunti_user.tunti_id = tunti.id "
+                    "AND account.id = tunti_user.account_id")
+
+- En halua nähdä päiviä tai tunteja, jotka eivät kuulu minulle (complete)
+  ("SELECT account.username, paiva.id From paiva, tunti, tunti_user, account "
+                    "WHERE paiva.id = tunti.paiva_id "
+                    "AND tunti_user.tunti_id = tunti.id "
+                    "AND account.id = tunti_user.account_id "
+                    "GROUP BY tunti.id")
