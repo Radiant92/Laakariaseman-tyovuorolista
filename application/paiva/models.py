@@ -32,7 +32,7 @@ class Paiva(BaseTila):
                     "WHERE paiva.id = tunti.paiva_id "
                     "AND tunti_user.tunti_id = tunti.id "
                     "AND account.id = tunti_user.account_id "
-                    "GROUP BY tunti.id, paiva.id")
+                    "GROUP BY account.id, paiva.id")
         res = db.engine.execute(stmt)
         for row in res:
             useri = User.query.filter(User.id == int(row[0])).first()
