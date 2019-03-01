@@ -34,7 +34,7 @@ class Paiva(BaseTila):
                     "GROUP BY tunti.id")
         res = db.engine.execute(stmt)
         for row in res:
-            if row[0] == user.username and self.id == row[1]:
+            if row[0] == user.username and self.id == int(row[1]):
                 return True
         return False
 
