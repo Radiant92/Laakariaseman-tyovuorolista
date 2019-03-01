@@ -3,7 +3,7 @@
 Sovelluksen avulla hallitaan lääkärien, sairaanhoitajien ja perushoitajien työvuorolistoja.
 Sovelluksen hallitsia (admin) voi luoda työviikkoja ja asettaa näiden viikkojen tunneille kiireellisyysluokkia ja työntekijöitä.
 Kiireellisyysluokka määrittää monenko työntekijän minimivahvuus kultakin alalta tarvitaan tunnille, tämän alittavaa tuntia ei näytetä työntekijöille. 
-Halutessaan hallitsija voi jättää tunnin luokittelematta josta näkyy työvuorossa vihreä teksti "luokaton"
+Halutessaan hallitsija voi jättää tunnin luokittelematta josta näkyy työvuorossa purppura teksti "luokaton"
 
 Työntekijä voi tarkastella omia työviikkojaan omasta arkistostaan
 lääkäri voi tuurata sairaanhoitajaa tai perushoitajaa mutta sairaanhoitaja voi tuurata vain perushoitajaa. 
@@ -27,6 +27,8 @@ Vain admin voi luoda työntekijän, kiireellisyys luokan ja työviikon.
 [Sovellus herokussa](https://medi-tyovuorolista-harjoitus.herokuapp.com/)
 
 [Tietokanta hahmotelma](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/tietokantaHahmotelma.md)
+
+[Create Tablet](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/CreateTablet.md)
 
 [User Storyt](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/userStoryt.md)
 
