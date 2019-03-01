@@ -69,9 +69,10 @@ from application.viikko import models
 from application.viikko import views
 
 from application.auth import views
- 
-db.create_all()
-
+try: 
+    db.create_all()
+except:
+    pass
 from application.tunti import views
 
 

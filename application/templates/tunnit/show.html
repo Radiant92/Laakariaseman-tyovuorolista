@@ -22,7 +22,7 @@
     {% elif tunti.tila == 1 %}
     <h1 style="color:green">Tunnilla on riittävästi työntekijöitä </h1>
     {% else %}
-    <h1 style="color:rgb(255, 0, 255);">Tunnilla on {{ tunti.tila }} työntekijän ylimiehitys</h1>
+    <h1 style="color:rgb(255, 0, 255);">Tunnilla on {{ tunti.tila -1 }} työntekijän ylimiehitys</h1>
     {% endif %}
 </div>
 {% if current_user.job == 'ADMIN' %}
