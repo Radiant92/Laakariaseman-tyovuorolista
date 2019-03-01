@@ -5,24 +5,24 @@
 
 </p>
 
-{% if needs_work is defined and current_user.is_admin %}
+{% if overflow is defined and current_user.job == 'ADMIN' %}
 <p>
-  Seuraavilla työntekijöillä ei ole viellä 40 työtuntia:
+  Seuraavilla viikoilla on tunteja jotka ovat ylimiehitettyjä!
 </p>
 <table class="table table-hover">
 
   <tr>
-    <th scope="col">Nimi</th>
-    <th scope="col">Ammatti</th>
+    <th scope="col">Vuosi & viikko</th>
+    <th scope="col">Ylimiehityksen määrä</th>
   </tr>
   <ul>
-    {% for user in needs_work %}
+    {% for viikko in overflow %}
     <tr>
-      <td>{{ user.name }}</td>
-      <td>{{ user.job }}</td>
+      <td>{{ viikko.vuosi }}, {{ viikko.numero }}</td>
+      <td>{{ viikko.over }}</td>
     </tr>
     {% endfor %}
   </ul>
-
-  {% endif %}
-  {% endblock %}
+</table>
+{% endif %}
+{% endblock %}

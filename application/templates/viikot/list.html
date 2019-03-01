@@ -11,6 +11,7 @@
     <td>{{ viikko.vuosi }}</td>
     <td>{{ viikko.numero }}</td>
     <td><a href="{{ url_for('viikot_show', id=viikko.id) }}">näytä</a></td>
+    {% if current_user.job == 'ADMIN' %}
     <td>
       <form method="POST" action="{{ url_for('viikot_edit', id=viikko.id) }}">
         <input type="submit" value="muokkaa" class="btn btn-warning" />
@@ -21,7 +22,7 @@
         <input type="submit" value="POISTA" class="btn btn-danger" />
       </form>
     </td>
-
+    {% endif %}
   </tr>
   {% endfor %}
 </table>

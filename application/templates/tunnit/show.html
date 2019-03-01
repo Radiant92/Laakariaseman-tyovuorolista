@@ -11,12 +11,34 @@
     <h1>Kiireellisyysluokka: {{ tunti.get_luokka() }}</h1>
     {% else %}
     <h1>Kiireellisyysluokka: {{ tunti.get_luokka().name }}</h1>
+    <h4>Lääkäreitä: {{ tunti.get_luokka().laakarit }}</h4>
+    <h4>Sairaanhoitajia: {{ tunti.get_luokka().sairaanhoitajat }}</h4>
+    <h4>Perushoitajia: {{ tunti.get_luokka().perushoitajat }}</h4>
+    <p>Lääkärit voivat korvata sairaanhoitajia ja perushoitajia, mutta sairaanhoitajat vain perushoitajia</p>
     {% endif %}
-    <td>
-        <form method="POST" action="{{ url_for('tunnit_edit', id=tunti.id) }}">
-            <input type="submit" value="muokkaa" class="btn btn-warning" />
-        </form>
-    </td>
+    {% if tunti.tila == 0 %}
+    <h1 style="color:red">Tunti ei kelpaa tälläisenään! </h1>
+    <p>kokeile joko lisätä työntekijöitä tai vaihtaa luokkaa</p>
+    {% elif tunti.tila == 1 %}
+    <h1 style="color:green">Tunnilla on riittävästi työntekijöitä </h1>
+    {% else %}
+    <h1 style="color:rgb(255, 0, 255);">Tunnilla on {{ tunti.tila }} työntekijän ylimiehitys</h1>
+    {% endif %}
+</div>
+{% if current_user.job == 'ADMIN' %}
+<div class="container">
+    <table>
+        <tr>
+            <form method="POST" action="{{ url_for('tunnit_edit', id=tunti.id) }}">
+                <input type="submit" value="vaihda luokkaa" class="btn btn-warning" />
+            </form>
+        </tr>
+        <tr>
+            <form method="POST" action="{{ url_for('tunnit_userit', id=tunti.id) }}">
+                <input type="submit" value="lisää työntekijöitä" class="btn btn-warning" />
+            </form>
+        </tr>
+    </table>
 </div>
 <table class="table table-hover">
 
@@ -24,11 +46,17 @@
         <th scope="col">Nimi</th>
         <th scope="col">Ammatti</th>
     </tr>
-    {% for user in tunti.users %}
+    {% for user in tunti.userit %}
     <tr>
         <td>{{ user.name }}</td>
         <td>{{ user.job }}</td>
+        <td>
+            <form method="POST" action="{{ url_for('tunti_user_delete', id=user.id, tunti_id=tunti.id) }}">
+                <input type="submit" value="POISTA" class="btn btn-danger" />
+            </form>
+        </td>
     </tr>
     {% endfor %}
 </table>
+{% endif %}
 {% endblock %}
