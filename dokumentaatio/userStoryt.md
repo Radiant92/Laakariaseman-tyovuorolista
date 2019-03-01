@@ -30,6 +30,10 @@
 
 - Asettaa kuhunkin luokkaan tarvittavan määrän kutakin työnimikettä (complete)
 
+### Työntekijänä haluan pystyä:
+
+- Näkemään kiireellisyysluokan nimen työviikossani (complete)
+
 ## Työviikot
 
 ### Hallinnon käyttäjänä haluan pystyä:
@@ -40,9 +44,21 @@
 
 - Asettaa tuntiin työntekijät (complete) 
 
+- Poistaa tunnilta työntekijän (complete)
+
+- vaihtaa tunnin kiireellisyysluokan (complete)
+
 - Julkaista työviikon (complete)
 
 - Viikkoa ei julkaista työntekijöille jos sen kiireellisyysluokkien vaatimukset ei ole täytetty (complete)
+
+- Jos vaatimukset täyttyvät tunti näkyy työviikossa vihreänä(complete)
+
+- Jos työntekijöitä on liika haluan että tunti näkyy purppurana(complete)
+
+- Jos työntekiät eivät täytä luokan vaatimuksia luokan tulee näkyä punaisena ja vain hallinnolle(complete)
+
+- Jos tuntiin tulee muutoksia haluan että tunnin väritila muuttuu (complete)
 
 - Katsella työviikkoja arkistosta (complete)
 
