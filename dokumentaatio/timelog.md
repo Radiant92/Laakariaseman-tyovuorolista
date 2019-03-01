@@ -26,6 +26,6 @@
 | 22.2 | Dokumentaatio "käyttöohje" | 1 | 1 |
 | 28.2 | viilailua, korjailuja ja liitokset taulujen välille | 10 | 10 |
 | 1.3 | SQL kyselyt, viilailuja, liitostauluja, dokumentaatiota, vievsejä ja ulkoasun lopisteluja | 17 | 17 |
-
-## aika projektin tekoon 62.75h
-## aika yhteensä: 86.5h
+| 1.3 | paranteluja ja taulukoiden siistimistä. nyt näyttää hyvältä! | 7 | 7 |
+## aika projektin tekoon 69.75h
+## aika yhteensä: 93.5h
