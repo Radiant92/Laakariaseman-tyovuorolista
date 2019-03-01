@@ -53,7 +53,9 @@ Ota huomioon että viikon valittuasi voit muokata viikon vuotta ja numeroa tai p
 #### Lista työviikoista
 **HUOM** jos poistat viikon niin siihen kuuluvat päivät ja tunnitkin poistuvat!
 
-Aiemmassa kohdassa mainitsemani **muokkaa** ja **poista** löytyy tältä sivulta, sekä viikon tietojen lisäksi ennen nappeja linkki nimeltä "**näytä**".
+Aiemmassa kohdassa mainitsemani **muokkaa** ja **poista** löytyy tältä sivulta, sekä viikon tietojen lisäksi ennen nappeja linkki nimeltä "**näytä**". 
+
+käyttäjänä näet tästä montako tuntia ja mille viikoille sinulle on töitä.
 
 #### näytä
 Painamalla linkkiä **näytä** avaat viikon näkymän.
