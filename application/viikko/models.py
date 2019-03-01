@@ -59,3 +59,33 @@ class Viikko(Base):
         Paiva.create_24_hours(perjantai)
         Paiva.create_24_hours(lauantai)
         Paiva.create_24_hours(sunnuntai)
+    @staticmethod
+    def get_viikot(user):
+        stmt = text("SELECT distinct account.username, viikko.id From viikko, paiva, tunti, tunti_user, account "
+                    "WHERE viikko.id = paiva.viikko_id "
+                    "AND paiva.id = tunti.paiva_id "
+                    "AND tunti_user.tunti_id = tunti.id "
+                    "AND account.id = tunti_user.account_id")
+        res = db.engine.execute(stmt)
+        response = []
+        for row in res:
+            if row[0] == user.username:
+                vid = int(row[1])
+                viikko = Viikko.query.filter(Viikko.id == vid).first()
+                response.append(viikko)
+        return response
+
+    @staticmethod
+    def find_overflow():
+        stmt = text("SELECT distinct viikko.id, count(tunti.id) FROM  tunti, paiva, viikko "
+                    "WHERE viikko.id = paiva.viikko_id "
+                    "AND paiva.id = tunti.paiva_id "
+                    "AND tunti.tila > 1 "
+                    "GROUP BY viikko.id "
+                    "ORDER BY viikko.id")
+        res = db.engine.execute(stmt)
+        response = []
+        for row in res:
+            viikko = Viikko.query.filter(Viikko.id == int(row[0])).first()
+            response.append({"vuosi":viikko.vuosi ,"numero":viikko.numero, "over":row[1]})
+        return response

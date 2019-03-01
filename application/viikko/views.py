@@ -12,8 +12,10 @@ from application.viikko.forms import ViikkoForm
 @app.route("/viikot", methods=["GET"])
 @login_required(role="ANY")
 def viikot_index():
-    return render_template("viikot/list.html", viikot = Viikko.query.all())
-
+    if current_user.job == 'ADMIN':
+        return render_template("viikot/list.html", viikot = Viikko.query.all())
+    else:
+        return render_template("viikot/list.html", viikot = Viikko.get_viikot(current_user))
 @app.route("/viikot/new/")
 @login_required(role="ADMIN")
 def viikot_form():
