@@ -9,6 +9,13 @@ antamalla konsolissa komennot
 
 päästyäsi aloitus sivulle valitse ylävalikosta kohta **Kirjaudu**
 
+4. jos et ole aiemmin käynnistänyt sovellusta niin tässävaiheessa viimeistään tiedosto db.users on rakentunut applikaatio kansioon.
+5. kun olet löytänyt tiedoston avaa se komennolla sqlite3 users.db ja syötä komento **INSERT INTO account (name, username, password, job, active) values ('admin','admin','admin','ADMIN',1)**
+6. kohtiin 'admin' voit täyttää haluamallasi tavalla kunhan neljäs 'ADMIN' on isolla kirjoitettu **ADMIN**
+7. käynnistä palvelin uudestaan ja kirjaudu admin tunnuksillasi sovellukseen
+
+
+
 ### Admin
 
 Adminina eli sovelluksen hallitsijana sinun tulee aluksi kirjautua käyttäjänimellä **admin** ja salasanalla **admin**.
