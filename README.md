@@ -32,4 +32,6 @@ Vain admin voi luoda työntekijän, kiireellisyys luokan ja työviikon.
 
 [User Storyt](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/userStoryt.md)
 
+[Retrospektiivi](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/retro.md)
+
 [Työloki](https://github.com/Radiant92/Laakariaseman-tyovuorolista/blob/master/dokumentaatio/timelog.md)
