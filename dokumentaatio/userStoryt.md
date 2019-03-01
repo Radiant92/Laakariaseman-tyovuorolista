@@ -58,6 +58,8 @@
 
 - Jos työntekiät eivät täytä luokan vaatimuksia luokan tulee näkyä punaisena ja vain hallinnolle(complete)
 
+- Jos tunnilla on työntekijöitä muttei luokitusta niin tunti näkyy purppurana jossa lukee "luokaton"(complete)
+
 - Jos tuntiin tulee muutoksia haluan että tunnin väritila muuttuu (complete)
 
 - Katsella työviikkoja arkistosta (complete)
