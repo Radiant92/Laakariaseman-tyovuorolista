@@ -24,6 +24,8 @@
 | 22.2 | Tietokantojen kirjoitus uudestaan manuaalisesti | 2 | 1 |
 | 22.2 | Sovelluksen muokkaus herokuun toimivaksi | 1 | 1 |
 | 22.2 | Dokumentaatio "käyttöohje" | 1 | 1 |
+| 28.2 | viilailua, korjailuja ja liitokset taulujen välille | 10 | 10 |
+| 1.3 | SQL kyselyt, viilailuja, liitostauluja, dokumentaatiota, vievsejä ja ulkoasun lopisteluja | 17 | 17 |
 
-## aika projektin tekoon 35.75h
-## aika yhteensä: 59.5h
+## aika projektin tekoon 62.75h
+## aika yhteensä: 86.5h
