@@ -66,46 +66,31 @@
 
 - Kirjauduttua nähdä listan viikkoja joissa on ylimiehitystä (complete)
 
+```
   ("SELECT distinct viikko.id, count(tunti.id) "
-  
-                    "FROM  tunti, paiva, viikko "
-                    
-                    "WHERE viikko.id = paiva.viikko_id "
-                    
-                    "AND paiva.id = tunti.paiva_id "
-                    
-                    "AND tunti.tila > 1 "
-                    
-                    "GROUP BY viikko.id "
-                    
+                    "FROM  tunti, paiva, viikko "                   
+                    "WHERE viikko.id = paiva.viikko_id "  
+                    "AND paiva.id = tunti.paiva_id "                    
+                    "AND tunti.tila > 1 "                    
+                    "GROUP BY viikko.id "                    
                     "ORDER BY viikko.id")
-
+```
 ### Työntekijänä haluan pystyä:
 
 - Katsella omia työviikkojani arkistosta (complete)
-
+```
   ("SELECT distinct account.username, viikko.id "
-  
-                    "FROM viikko, paiva, tunti, tunti_user, account "
-                    
-                    "WHERE viikko.id = paiva.viikko_id "
-                    
-                    "AND paiva.id = tunti.paiva_id "
-                    
-                    "AND tunti_user.tunti_id = tunti.id "
-                    
+                    "FROM viikko, paiva, tunti, tunti_user, account "                    
+                    "WHERE viikko.id = paiva.viikko_id "                    
+                    "AND paiva.id = tunti.paiva_id "                    
+                    "AND tunti_user.tunti_id = tunti.id "                    
                     "AND account.id = tunti_user.account_id")
-
+```
 - En halua nähdä päiviä tai tunteja, jotka eivät kuulu minulle (complete)
-
-  ("SELECT account.username, paiva.id "
-  
-                    "FROM paiva, tunti, tunti_user, account "
-                    
+```
+"SELECT account.id, paiva.id From paiva, tunti, tunti_user, account "
                     "WHERE paiva.id = tunti.paiva_id "
-                    
                     "AND tunti_user.tunti_id = tunti.id "
-                    
                     "AND account.id = tunti_user.account_id "
-                    
-                    "GROUP BY tunti.id")
+                    "GROUP BY account.id, paiva.id"
+```
