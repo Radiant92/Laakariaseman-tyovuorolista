@@ -14,12 +14,13 @@ def getLuokat():
         lista.append(ident)
     return lista
 
-def getUsers():
+def getUsers(tunti):
     users = User.query.filter(User.job !='ADMIN').all()
     lista = []
     for i in users:
-        ident = (str(i.id),i.name + ', ' + i.job)
-        lista.append(ident)
+        if i not in tunti.userit:
+            ident = (str(i.id),i.name + ', ' + i.job)
+            lista.append(ident)
     return lista
 
 def userOverflow(tunti):
@@ -93,7 +94,7 @@ def tunnit_userit(id):
     tunti = Tunti.query.filter(Tunti.id == id).first()
     if tunti:
         form = LisaaUserForm(request.form)
-        form.userit.choices = getUsers()
+        form.userit.choices = getUsers(tunti)
         if form.validate_on_submit():
             users = form.userit.data
             for i in users:

@@ -45,8 +45,9 @@
       {% endif %}
       </ul>
     </div>
+    {% if current_user.is_authenticated %}
     <a href="#" onclick="history.go(-1)">Palaa taaksepäin</a>
-
+    {% endif %}
   </nav>
   <main role="main" class="container">
     {% block body %}
