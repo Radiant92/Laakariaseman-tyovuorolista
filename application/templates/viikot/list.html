@@ -5,12 +5,24 @@
   <tr>
     <th scope="col">vuosi</th>
     <th scope="col">Viikon numero</th>
+    {% if current_user.job != 'ADMIN' %}
+    <th scope="col">tunteja</th>
+    {% endif %}
+    <th scope="col">linkki viikkoon</th>
   </tr>
   {% for viikko in viikot %}
   <tr>
+    {% if current_user.job == 'ADMIN' %}
     <td>{{ viikko.vuosi }}</td>
     <td>{{ viikko.numero }}</td>
     <td><a href="{{ url_for('viikot_show', id=viikko.id) }}">näytä</a></td>
+    {% else %}
+    <td>{{ viikko.viikko.vuosi }}</td>
+    <td>{{ viikko.viikko.numero }}</td>
+    <td>{{ viikko.tunteja }}</td>
+    <td><a href="{{ url_for('viikot_show', id=viikko.viikko.id) }}">näytä</a></td>
+    {% endif %}
+
     {% if current_user.job == 'ADMIN' %}
     <td>
       <form method="POST" action="{{ url_for('viikot_edit', id=viikko.id) }}">

@@ -61,18 +61,21 @@ class Viikko(Base):
         Paiva.create_24_hours(sunnuntai)
     @staticmethod
     def get_viikot(user):
-        stmt = text("SELECT distinct account.username, viikko.id From viikko, paiva, tunti, tunti_user, account "
+        stmt = text("SELECT count(tunti.id), viikko.id, account.username "
+		            "From viikko, paiva, tunti, tunti_user, account "
                     "WHERE viikko.id = paiva.viikko_id "
                     "AND paiva.id = tunti.paiva_id "
                     "AND tunti_user.tunti_id = tunti.id "
-                    "AND account.id = tunti_user.account_id")
+                    "AND account.id = tunti_user.account_id "
+		            "AND tunti.tila > 0 "
+		            "GROUP BY viikko.id, account.username")
         res = db.engine.execute(stmt)
         response = []
         for row in res:
-            if row[0] == user.username:
+            if row[2] == user.username:
                 vid = int(row[1])
                 viikko = Viikko.query.filter(Viikko.id == vid).first()
-                response.append(viikko)
+                response.append({"viikko":viikko, "tunteja":row[0]})
         return response
 
     @staticmethod
