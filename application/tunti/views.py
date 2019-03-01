@@ -53,7 +53,7 @@ def checkTila(tunti):
         if maara == 0:
             tunti.tila = 0
         else:
-            tunti.tila = maara
+            tunti.tila = maara +1
     else:
         tulos = userOverflow(tunti)
         if tulos == 0:
