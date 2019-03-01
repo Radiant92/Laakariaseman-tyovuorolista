@@ -30,6 +30,10 @@
 
 - Asettaa kuhunkin luokkaan tarvittavan määrän kutakin työnimikettä (complete)
 
+### Työntekijänä haluan pystyä:
+
+- Näkemään kiireellisyysluokan nimen työviikossani (complete)
+
 ## Työviikot
 
 ### Hallinnon käyttäjänä haluan pystyä:
@@ -38,14 +42,68 @@
 
 - Asettaa jokaisen työviikon jokaisen päivän jokaiseen tuntiin oman kiireellisyysluokan (complete)
 
-- Asettaa kiireellisyysluokkiin työntekijät 
+- Asettaa tuntiin työntekijät (complete) 
 
-- Julkaista työviikon
+- Poistaa tunnilta työntekijän (complete)
 
-- Viikkoa ei pysty julkaista jos sen kiireellisyysluokkien vaatimukset ei ole täytetty
+- vaihtaa tunnin kiireellisyysluokan (complete)
+
+- Julkaista työviikon (complete)
+
+- Viikkoa ei julkaista työntekijöille jos sen kiireellisyysluokkien vaatimukset ei ole täytetty (complete)
+
+- Jos vaatimukset täyttyvät tunti näkyy työviikossa vihreänä(complete)
+
+- Jos työntekijöitä on liika haluan että tunti näkyy purppurana(complete)
+
+- Jos työntekiät eivät täytä luokan vaatimuksia luokan tulee näkyä punaisena ja vain hallinnolle(complete)
+
+- Jos tuntiin tulee muutoksia haluan että tunnin väritila muuttuu (complete)
 
 - Katsella työviikkoja arkistosta (complete)
 
+- Kirjauduttua nähdä listan viikkoja joissa on ylimiehitystä (complete)
+
+  ("SELECT distinct viikko.id, count(tunti.id) "
+  
+                    "FROM  tunti, paiva, viikko "
+                    
+                    "WHERE viikko.id = paiva.viikko_id "
+                    
+                    "AND paiva.id = tunti.paiva_id "
+                    
+                    "AND tunti.tila > 1 "
+                    
+                    "GROUP BY viikko.id "
+                    
+                    "ORDER BY viikko.id")
+
 ### Työntekijänä haluan pystyä:
 
-- katsella omia työviikkojani arkistosta
+- Katsella omia työviikkojani arkistosta (complete)
+
+  ("SELECT distinct account.username, viikko.id "
+  
+                    "FROM viikko, paiva, tunti, tunti_user, account "
+                    
+                    "WHERE viikko.id = paiva.viikko_id "
+                    
+                    "AND paiva.id = tunti.paiva_id "
+                    
+                    "AND tunti_user.tunti_id = tunti.id "
+                    
+                    "AND account.id = tunti_user.account_id")
+
+- En halua nähdä päiviä tai tunteja, jotka eivät kuulu minulle (complete)
+
+  ("SELECT account.username, paiva.id "
+  
+                    "FROM paiva, tunti, tunti_user, account "
+                    
+                    "WHERE paiva.id = tunti.paiva_id "
+                    
+                    "AND tunti_user.tunti_id = tunti.id "
+                    
+                    "AND account.id = tunti_user.account_id "
+                    
+                    "GROUP BY tunti.id")
